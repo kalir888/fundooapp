@@ -1,0 +1,23 @@
+.background-colour-icon-container {
+    width: 8%;
+    display: flex;                                                                                                       
+}
+
+.background-colour-icon {
+    width: 100%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.background-colour-icon:active {
+    background-color: lightgray;
+}
+
+.color-popper-box {
+    width: 100%;
+    border-radius: 5px 5px 5px 5px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    left: 150px;
+}

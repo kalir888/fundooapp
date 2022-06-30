@@ -1,0 +1,86 @@
+.take-notethree-container {
+    width: 18vw;
+    height: 23vh;
+    border: 1px solid gray;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.notethree-title-container {
+    height: 25%;
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.notethree-title-content {
+    height: 90%;
+    width: 75%;
+    font-weight: 500;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    outline: none;
+    cursor: default;
+}
+
+.notethree-pin-icon {
+    height: 80%;
+    width: 9%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.notethree-pin-icon:active {
+    background-color: lightgray;
+}
+
+.notethree-content {
+    width: 90%;
+    height: 20%;
+    font-weight: 500;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    outline: none;
+    resize: none;
+    cursor: default;
+}
+
+.notethree-option-container {
+    height: 20%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notethree-option {
+    width: 8%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.notethree-option:active {
+    background-color: lightgray;
+}
+
+.popup-box-container {
+    width: 43vw;
+    height: 30vh;
+    border: 1px solid gray;
+    border-radius: 10px 10px 10px 10px;
+    position: absolute; 
+    left: 300px;
+    top: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}

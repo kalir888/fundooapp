@@ -1,0 +1,106 @@
+.take-notetwo-container {
+    width: 43vw;
+    height: 20vh;
+    border: 1px solid gray;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.notetwo-title-container {
+    height: 25%;
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.notetwo-title-content {
+    height: 90%;
+    width: 90%;
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    outline: none;
+}
+
+.notetwo-pin-icon {
+    height: 80%;
+    width: 6%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.notetwo-pin-icon:active {
+    background-color: lightgray;
+}
+
+.note-content {
+    width: 97%;
+    height: 20%;
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.option-container {
+    height: 30%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option {
+    width: 5%;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.option:active {
+    background-color: lightgray;
+}
+
+.do-option {
+    width: 4%;
+    cursor: pointer;
+}
+
+.do-option:active {
+    background-color: lightgray;
+}
+
+.close-option {
+    width: 8%;
+    height: 70%;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-option:active {
+    background-color: lightgray;
+}
+
+
+
+

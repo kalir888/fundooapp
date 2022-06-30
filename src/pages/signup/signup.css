@@ -1,0 +1,140 @@
+.whole-page-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.signup-page-container {
+    height: 95vh;
+    width: 55vw;
+    border: 1px solid gray;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.signup-form-container {
+    height: 100%;
+    width: 58%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.head-form-container {
+    height: 25%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;  
+    
+}
+
+.googleone-word-container {
+    font-size: x-large;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.templateone-container {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    color: #202124;
+    font-family: arial,sans-serif;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.name-form-container {
+    width: 85%;
+    height: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.name-container {
+    width: 49%;
+}
+
+.user-name-container {
+    width: 85%;
+    height: 7%;
+}
+
+.user-name-content {
+    width: 100%;
+}
+
+.button-container {
+    width: 85%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.password-form-container {
+    width: 85%;
+    height: 7%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.helper-text-container {
+    width: 80%;
+    font-size: 12px;
+    color: gray;
+}
+
+.check-box-container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.last-option-container {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signin-button-container {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.signin-button-container:active {
+    background-color: lightblue;
+}
+
+.next-container {
+    width: 20%;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-image-container {
+    width: 85%;
+}
+
+.advertisement-container {
+    width: 70%;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

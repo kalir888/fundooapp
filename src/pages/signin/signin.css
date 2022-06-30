@@ -1,0 +1,129 @@
+.full-signin-page {
+    height: 100vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-page-container {
+    height: 95vh;
+    width: 35vw;
+    border: 1px solid gray;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-container {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 50px;
+}
+
+.google-word-container {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.signin-word-container {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    align-items: center;
+}
+
+.template-container {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    align-items: flex-end;
+}
+
+.input-container {
+    width: 80%;
+    height: 18%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 40px;
+   
+}
+
+.forgot-button-container {
+    color: #1a73e8;
+    display: flex;
+}
+
+.forgot-button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: small;
+    color: #1a73e8;
+}
+
+.forgot-button:active {
+    background-color: lightblue;
+}
+
+.instruction-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    color: #5f6368;
+    font-size: 14px;
+}
+
+.more-button-container {
+    color: #1a73e8;
+    border: none;
+    font-size: medium;
+    font-weight: 500;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+}
+
+.more-button-container:active {
+    background-color: lightblue;
+}
+
+.options-container {
+    width: 80%;
+    position: relative;
+    top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create-option {
+    color: #1a73e8;
+    font-size: medium;
+    font-weight: bold;
+    display: flex;
+    border: none;
+    cursor: pointer;
+}
+
+.create-option:active {
+    background-color: lightblue;
+}
+
