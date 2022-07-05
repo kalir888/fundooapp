@@ -1,12 +1,8 @@
-.background-colour-icon-container {
-    width: 8%;
-    display: flex;                                                                                                       
-}
-
 .background-colour-icon {
     width: 100%;
     border-radius: 100%;
     cursor: pointer;
+    margin-top: 8px;
 }
 
 .background-colour-icon:active {

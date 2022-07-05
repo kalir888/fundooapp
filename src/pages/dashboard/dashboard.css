@@ -1,22 +1,22 @@
 .dashboard-container {
-    height: 160vh;
+    height: 120vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 }
 
 .dash-notes-container {
-    height: 20vh;
+    height: 25vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin-top: 30px;
 }
 
 .all-notes-container {
-    height: 120vh;
+    height: 250vh;
     width: 80vw;
     display: flex;
     flex-flow: row wrap;

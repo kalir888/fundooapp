@@ -25,7 +25,7 @@ export default function ColorPopper(props) {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popper' : undefined;
-  const colorArray = ['ffffff','#e2725b', '#ffae42', '#fefe33', '#77dd77', '#40e0d0', '#a4dded', '#77b5fe', '#ba55d3', '#ffb3de', '#c19a6b', '#d3d3d3']
+  const colorArray = ['white','#e2725b', '#ffae42', '#fefe33', '#77dd77', '#40e0d0', '#a4dded', '#77b5fe', '#ba55d3', '#ffb3de', '#c19a6b', '#d3d3d3']
 
   return (
     <div>

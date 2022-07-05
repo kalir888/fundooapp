@@ -3,7 +3,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Google from '../../assets/google.jpg';
 import './signin.css';
-import { userSignin } from '../../service/userservice'
+import { userSignin } from '../../service/userservice';
+import { useHistory } from 'react-router-dom';
 
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
@@ -13,6 +14,7 @@ const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).
 function SignIn() {
     /* const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState(''); */
+    const history = useHistory();
     const [signinObj, setSigninObj] = React.useState({email: '', password: ''});
     const [regexObj, setRegexObj] = React.useState({emailBorder: false, emailHelper: '',passwordBorder: false, passwordHelper: ''});
 
@@ -44,7 +46,8 @@ function SignIn() {
             userSignin(signinObj).then((response) => {
                 console.log(response);
                 localStorage.setItem('token', response.data.data);
-            })
+                history.push('/Dashboard');
+            }).catch((error) => console.log(error))
         }
     }
     return(
@@ -70,7 +73,7 @@ function SignIn() {
                     </div>
                 </div>
                 <div className="input-container">
-                    <TextField id="outlined-basic" label="Password" variant="outlined" size="small" 
+                    <TextField id="outlined-basic" label="Password" variant="outlined" size="small" type='password'
                     error={regexObj.passwordBorder} helperText={regexObj.passwordHelper} onChange={getPassword} />
                     <div className="forgot-button-container">
                         <div className="forgot-button">Forgot password?</div>

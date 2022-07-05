@@ -1,14 +1,20 @@
 import React from "react";
 import './header.css';
+import { connect } from 'react-redux';
 
-function Header() {
+function Header(props) {
+
+    const clickHandler = () => {
+        props.showDrawer();
+    }
+
     return (
         <div>
             <div className="parent-container">
                 <div className="section-content-one">
-                    <img src="./images/menuicon.PNG" alt="Menu" className="menu-icon"/>
+                    <img src="./images/menuicon.PNG" alt="Menu" className="menu-icon" onClick={clickHandler} />
                     <img src="./images/buld.PNG" alt="" className="keep-icon"/>
-                    <div id="keep">Keep</div>
+                    <div id="keep">{props.title}</div>
                 </div>
                 <div className="section-content-two">
                     <img src="./images/searchimage.PNG" alt="search" className="search-icon"/>
@@ -27,5 +33,10 @@ function Header() {
         </div>
     )
 }
-
-export default Header;
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        title: state.drawerReducer.title,
+    };
+};
+export default connect(mapStateToProps)(Header);

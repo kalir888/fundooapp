@@ -2,6 +2,11 @@ import React from "react";
 import './takenotetwo.css';
 import { addNote } from '../../service/dataservice';
 import ColorPopper from "../colorpopper/colorpopper";
+import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
+import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
+import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 
 const IS_EMPTY = 0;
 
@@ -49,12 +54,16 @@ function TakeNoteTwo(props) {
                 onChange={getDescription} style={{backgroundColor: note.color}}></textarea>
              <div className="option-container">
                 <div className="options">
-                    <img src="./images/remindme.SVG" alt="Remindme" className="option"/>
-                    <img src="./images/collabarator.SVG" alt="collabarator" className="option"/>
+                    {/* <img src="./images/remindme.SVG" alt="Remindme" className="option"/> */}
+                    <AddAlertOutlinedIcon fontSize=''/>
+                    {/* <img src="./images/collabarator.SVG" alt="collabarator" className="option"/> */}
+                    <PersonAddAltOutlinedIcon fontSize='small' />
                     <ColorPopper getColor={getColor} action="create"/>
-                    <img src="./images/addimageicon.SVG" alt="addimage" className="option"/>
-                    <img src="./images/archiveicon.SVG" alt="archive" className="option" onClick={archiveNote}/>
-                    <img src="./images/moreicon.SVG" alt="more" className="option"/>
+                    {/* <img src="./images/addimageicon.SVG" alt="addimage" className="option"/> */}
+                    <InsertPhotoOutlinedIcon fontSize='small' />
+                    <ArchiveOutlinedIcon fontSize="small" onClick={archiveNote}/>
+                    {/* <img src="./images/moreicon.SVG" alt="more" className="option"/> */}
+                    <MoreVertOutlinedIcon fontSize="small"/>
                     <img src="./images/undoicon.PNG" alt="undo" className="do-option"/>
                     <img src="./images/redoicon.PNG" alt="redo" className="do-option"/>
                 </div>

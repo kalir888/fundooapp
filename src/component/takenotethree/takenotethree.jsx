@@ -36,6 +36,7 @@ function TakeNoteThree(props) {
   const handleOpen = (noteObj) => {
     setOpen(true);
     setEditNote(noteObj);
+    console.log(editNote.color);
   }
 
   const handleClose = () => setOpen(false);

@@ -5,6 +5,7 @@ import TakeNoteTwo from "../../component/takenotetwo/takenotetwo";
 import './dashboard.css';
 import { getAllNotes } from '../../service/dataservice';
 import TakeNoteThree from "../../component/takenotethree/takenotethree";
+import MiniDrawer from "../../component/drawer/minidrawer";
 
 function Dashboard() {
 
@@ -12,7 +13,14 @@ function Dashboard() {
 
     const [takeNoteStatus, setTakeNoteStatus] = React.useState(true);
 
+    const [drawer, setDrawer] = React.useState(false);
+
     const noteList = allNotes.map(note => <TakeNoteThree key={note._id} note={note}/>);
+
+    const showDrawer = () => {
+        setDrawer(!drawer);
+        return drawer;
+    }
 
     const showNoteTwo = () => {
         setTakeNoteStatus(false);
@@ -31,7 +39,8 @@ function Dashboard() {
 
     return(
         <div className="dashboard-container">
-            <Header/>
+            <Header showDrawer={showDrawer}/>
+            <MiniDrawer status={drawer}/>
             <div className="dash-notes-container">
                 {
                     takeNoteStatus ? <TakeNoteOne showNoteTwo={showNoteTwo}/> : <TakeNoteTwo showNoteOne={showNoteOne}/>

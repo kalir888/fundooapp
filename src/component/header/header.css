@@ -2,9 +2,12 @@
     width: 100vw;
     border-bottom: 1px solid gray;
     height: 10vh;
+    position: fixed;
+    left: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
 }
 
 .section-content-one {
