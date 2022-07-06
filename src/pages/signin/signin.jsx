@@ -12,8 +12,6 @@ const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).
 
 
 function SignIn() {
-    /* const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState(''); */
     const history = useHistory();
     const [signinObj, setSigninObj] = React.useState({email: '', password: ''});
     const [regexObj, setRegexObj] = React.useState({emailBorder: false, emailHelper: '',passwordBorder: false, passwordHelper: ''});
