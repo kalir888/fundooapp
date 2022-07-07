@@ -16,8 +16,7 @@
 }
 
 .all-notes-container {
-    height: 250vh;
-    width: 80vw;
+    width: 50vw;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;

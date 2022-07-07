@@ -4,6 +4,7 @@ import "../takenotetwo/takenotetwo.css";
 import ColorPopper from "../colorpopper/colorpopper";
 import { archiveTheNote, updateNote } from "../../service/dataservice";
 import Modal from '@mui/material/Modal';
+import { Card, CardActions, CardContent, TextareaAutosize } from "@mui/material";
 
 function TakeNoteThree(props) {
 
@@ -42,34 +43,35 @@ function TakeNoteThree(props) {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <div className="take-notethree-container" style={{backgroundColor: props.note.color}}>
-        <div className="notethree-title-container">
-          <input
-            type="text"
-            name="Title"
-            defaultValue={props.note.Title}
-            className="notethree-title-content"
+    <Card>
+      <Card className="take-notethree-container" style={{backgroundColor: props.note.color}}>
+        <CardContent className="title-description-container">
+          <div className="notethree-title-container">
+            <input
+              type="text"
+              name="Title"
+              defaultValue={props.note.Title}
+              className="notethree-title-content"
+              style={{backgroundColor: props.note.color}}
+              onClick={() => handleOpen(props.note)}
+              readOnly
+            />
+            <img
+              src="./images/pinicon.SVG"
+              alt="pin"
+              className="notethree-pin-icon"
+            />
+          </div>
+          <TextareaAutosize
+            cols="60"
+            rows="2"
+            defaultValue={props.note.Description}
+            className="notethree-content"
             style={{backgroundColor: props.note.color}}
             onClick={() => handleOpen(props.note)}
-            readOnly
-          />
-          <img
-            src="./images/pinicon.SVG"
-            alt="pin"
-            className="notethree-pin-icon"
-          />
-        </div>
-        <textarea
-          cols="60"
-          rows="2"
-          defaultValue={props.note.Description}
-          className="notethree-content"
-          style={{backgroundColor: props.note.color}}
-          onClick={() => handleOpen(props.note)}
-          readOnly
-        ></textarea>
-        <div className="notethree-option-container">
+            readOnly/>
+        </CardContent>
+        <CardActions className="notethree-option-container">
           <img
             src="./images/remindme.SVG"
             alt="Remindme"
@@ -97,8 +99,8 @@ function TakeNoteThree(props) {
             alt="more"
             className="notethree-option"
           />
-        </div>
-      </div>
+        </CardActions>
+      </Card>
       <Modal
         open={open}
         onClose={handleClose}
@@ -128,7 +130,7 @@ function TakeNoteThree(props) {
           </div>
         </div>
       </Modal>
-    </div>
+    </Card>
   );
 }
 

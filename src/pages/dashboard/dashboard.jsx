@@ -6,6 +6,7 @@ import './dashboard.css';
 import { getAllNotes } from '../../service/dataservice';
 import TakeNoteThree from "../../component/takenotethree/takenotethree";
 import MiniDrawer from "../../component/drawer/minidrawer";
+import { Grid } from "@mui/material";
 
 function Dashboard() {
 
@@ -14,8 +15,6 @@ function Dashboard() {
     const [takeNoteStatus, setTakeNoteStatus] = React.useState(true);
 
     const [drawer, setDrawer] = React.useState(false);
-
-    const noteList = allNotes.map(note => <TakeNoteThree key={note._id} note={note}/>);
 
     const showDrawer = () => {
         setDrawer(!drawer);
@@ -46,7 +45,11 @@ function Dashboard() {
                     takeNoteStatus ? <TakeNoteOne showNoteTwo={showNoteTwo}/> : <TakeNoteTwo showNoteOne={showNoteOne}/>
                 }
             </div>
-            <div className="all-notes-container">{noteList}</div>
+            <Grid container style={{width: '80vw', height: 'auto'}} spacing={2} columns={{ xs: 8, sm: 12, md: 12 }}>
+                {allNotes.map(note => <Grid item lg={9}>
+                     <TakeNoteThree key={note._id} note={note}/>
+                     </Grid>)}
+                     </Grid>
         </div>
     )
 }

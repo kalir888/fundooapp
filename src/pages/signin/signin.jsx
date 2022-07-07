@@ -1,7 +1,6 @@
 import React from "react";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Google from '../../assets/google.jpg';
 import './signin.css';
 import { userSignin } from '../../service/userservice';
 import { useHistory } from 'react-router-dom';
@@ -25,7 +24,6 @@ function SignIn() {
     }
 
     const testUserDetails = () => {
-        /* console.log(signinObj.email, signinObj.password); */
         let emailTest = emailRegex.test(signinObj.email);
         let passwordTest = passwordRegex.test(signinObj.password);
         if(emailTest === false) {

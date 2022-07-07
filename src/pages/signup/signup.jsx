@@ -5,9 +5,9 @@ import { InputAdornment } from "@mui/material";
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import './signup.css';
-import Google from '../../assets/google.jpg';
 import Account from '../../assets/account.svg';
 import { userSignup } from "../../service/userservice";
+/* import { useHistory } from 'react-router-dom'; */
 
 const firstNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
 const lastNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
@@ -15,8 +15,6 @@ const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\")
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
 
 function SignUp() {
-    /* const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState(''); */
     const [signupObj, setSignupObj] = React.useState({firstName: '', lastName: '', email: '', password: ''});
     const [regexObj, setRegexObj] = React.useState({firstNameBorder: false, firstNameHelper: '', 
                                                     lastNameBorder: false, lastNameHelper: '',
@@ -85,7 +83,10 @@ function SignUp() {
         }
 
         if(firstNameTest === true && lastNameTest === true && emailTest === true && passwordTest === true && conPasswordTest === true) {
-            userSignup(signupObj).then((response) => console.log(response)).catch((error) => console.log(error));
+            userSignup(signupObj).then((response) => {
+                console.log(response);
+                /* history.push('/Signin'); */
+            }).catch((error) => console.log(error));
         }
     }
 
