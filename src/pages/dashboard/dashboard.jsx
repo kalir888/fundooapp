@@ -49,7 +49,7 @@ function Dashboard() {
                 {allNotes.map(note => <Grid item lg={9}>
                      <TakeNoteThree key={note._id} note={note}/>
                      </Grid>)}
-                     </Grid>
+            </Grid>
         </div>
     )
 }
