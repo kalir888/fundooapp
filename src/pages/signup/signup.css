@@ -4,7 +4,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .signup-page-container {
@@ -32,7 +31,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;  
-    
 }
 
 .googleone-word-container {
@@ -43,6 +41,7 @@
 }
 
 .templateone-container {
+    text-align: left;
     width: 100%;
     font-size: 24px;
     font-weight: 400;
@@ -57,8 +56,7 @@
     height: 7%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .name-container {
@@ -121,6 +119,7 @@
 }
 
 .right-container {
+    width: 42%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,4 +136,66 @@
     font-weight: 300;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .right-container {
+        display: none;
+    }
+
+    .signup-page-container {
+        width: 100vw;
+        height: 120vh;
+    }
+
+    .signup-form-container {
+        width: 100%;
+    }
+
+    .googleone-word-container {
+        margin-top: 20px;
+    }
+
+    .templateone-container {
+        text-align: left;
+    }
+
+    .name-form-container {
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name-container {
+        width: 100%;
+    }
+
+    .password-form-container {
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .right-container {
+        display: none;
+    }
+
+    .signup-page-container {
+        width: 100vw;
+        height: 120vh;
+    }
+
+    .signup-form-container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1024PX) {
+    .signup-page-container {
+        width: 80vw;
+        height: 100vh;
+    }
 }
