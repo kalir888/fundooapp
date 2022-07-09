@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import './signup.css';
 import Account from '../../assets/account.svg';
 import { userSignup } from "../../service/userservice";
-/* import { useHistory } from 'react-router-dom'; */
+import { useHistory } from "react-router-dom";
 
 const firstNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
 const lastNameRegex = /^[A-Z]{1}[a-z]{2,}$/;
@@ -15,6 +15,7 @@ const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\")
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
 
 function SignUp() {
+    let history = useHistory();
     const [signupObj, setSignupObj] = React.useState({firstName: '', lastName: '', email: '', password: ''});
     const [regexObj, setRegexObj] = React.useState({firstNameBorder: false, firstNameHelper: '', 
                                                     lastNameBorder: false, lastNameHelper: '',
@@ -22,6 +23,7 @@ function SignUp() {
                                                     passwordBorder: false, passwordHelper: '',
                                                     conPasswordBorder: false, conPasswordHelper: ''});
     const [conPassword, setConPassword] = React.useState('');
+    const [showPassword, setShowPassword] = React.useState(false);
 
     const getFirstName = (event) => {
         setSignupObj((prevState) => ({...prevState,firstName: event.target.value}));
@@ -43,6 +45,10 @@ function SignUp() {
 
     const getConPassword = (event) => {
         setConPassword(event.target.value);
+    }
+
+    const goToSigninPage = () => {
+        history.push('/Signin');
     }
 
     const testUserDetails = () => {
@@ -85,7 +91,7 @@ function SignUp() {
         if(firstNameTest === true && lastNameTest === true && emailTest === true && passwordTest === true && conPasswordTest === true) {
             userSignup(signupObj).then((response) => {
                 console.log(response);
-                /* history.push('/Signin'); */
+                goToSigninPage();
             }).catch((error) => console.log(error));
         }
     }
@@ -118,23 +124,25 @@ function SignUp() {
                         }} error={regexObj.emailBorder} helperText={regexObj.emailHelper} onChange={getEmail}/>
                     </div>
                     <div className="button-container">
-                        <button className="signin-button-container">Use my current email address instead</button>
+                        <Button size='small'><span style={{textTransform: 'none', fontWeight: 700}}>Use my current email address instead</span></Button>
                     </div>
                     <div className="password-form-container">
                         <TextField id="outlined-basic" label="Password" variant="outlined" size="small" className="name-container"
-                        error={regexObj.passwordBorder} helperText={regexObj.passwordHelper} onChange={getPassword}/>
+                        error={regexObj.passwordBorder} helperText={regexObj.passwordHelper} onChange={getPassword}
+                        type={showPassword ? 'text' : 'password'}/>
                         <TextField id="outlined-basic" label="Confirm" variant="outlined" size="small" className="name-container"
-                        error={regexObj.conPasswordBorder} helperText={regexObj.conPasswordHelper} onChange={getConPassword}/>
+                        error={regexObj.conPasswordBorder} helperText={regexObj.conPasswordHelper} onChange={getConPassword}
+                        type={showPassword ? 'text' : 'password'}/>
                     </div>
                     <div className="helper-text-container"> 
                         <span>Use 8 or more characters with a mix of letters, numbers & symbols</span>
                     </div>
                     <div className="check-box-container">
-                        <FormControlLabel control={<Checkbox/>} label="Show password" />
+                        <FormControlLabel control={<Checkbox onChange={() => setShowPassword(!showPassword)}/>} label="Show password" />
                     </div>
                     <div className="last-option-container">
-                        <button className="signin-button-container">Sign in instead</button>
-                        <Button size="small" variant="contained" className="next-container" onClick={testUserDetails}>Next</Button>
+                        <Button size='small' onClick={goToSigninPage}><span style={{textTransform: 'none', fontWeight: 700}}>Sign in instead</span></Button>
+                        <Button size="small" variant="contained" onClick={testUserDetails}><span style={{textTransform: 'none', fontWeight: 700}}>Next</span></Button>
                     </div>
                 </div>
                 <div className="right-container">

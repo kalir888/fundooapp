@@ -23,6 +23,10 @@ function SignIn() {
         setSigninObj((prevState) => ({...prevState,password: event.target.value}));
     }
 
+    const goToSignupPage = () => {
+        history.push('');
+    }
+
     const testUserDetails = () => {
         let emailTest = emailRegex.test(signinObj.email);
         let passwordTest = passwordRegex.test(signinObj.password);
@@ -65,25 +69,25 @@ function SignIn() {
                     <TextField id="outlined-basic" label="Email or phone" variant="outlined" size="small" 
                     error={regexObj.emailBorder} helperText={regexObj.emailHelper} onChange={getEmail} />
                     <div className="forgot-button-container">
-                        <button className="forgot-button">Forgot email?</button>
+                        <Button size='small'><span style={{textTransform: 'none', fontWeight: 700}}>Forgot email?</span></Button>
                     </div>
                 </div>
                 <div className="input-container">
                     <TextField id="outlined-basic" label="Password" variant="outlined" size="small" type='password'
                     error={regexObj.passwordBorder} helperText={regexObj.passwordHelper} onChange={getPassword} />
                     <div className="forgot-button-container">
-                        <div className="forgot-button">Forgot password?</div>
+                        <Button size='small'><span style={{textTransform: 'none', fontWeight: 700}}>Forgot password?</span></Button>
                     </div>
                 </div>
                 <div className="instruction-container">
                     <div>Not your computer? Use Guest mode to sign in privately.</div>
-                    <div>
-                        <button className="more-button-container">Learn more</button>
+                    <div className='learn-more-container'>
+                        <Button size='small'><span style={{textTransform: 'none', fontWeight: 700}}>Learn more</span></Button>
                     </div>
                 </div>
                 <div className="options-container">
-                    <button className="create-option">Create account</button>
-                    <Button size="small" variant="contained" className="next-container" onClick={testUserDetails}>Next</Button>
+                    <Button size='small' onClick={goToSignupPage}><span style={{textTransform: 'none', fontWeight: 700}}>Create account</span></Button>
+                    <Button size="small" variant="contained" className="next-container" onClick={testUserDetails}><span style={{textTransform: 'none', fontWeight: 700}}>Next</span></Button>
                 </div>
             </div>
         </div>

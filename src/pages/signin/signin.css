@@ -90,18 +90,8 @@
     font-size: 14px;
 }
 
-.more-button-container {
-    color: #1a73e8;
-    border: none;
-    font-size: medium;
-    font-weight: 500;
-    cursor: pointer;
-    font-weight: bold;
+.learn-more-container {
     display: flex;
-}
-
-.more-button-container:active {
-    background-color: lightblue;
 }
 
 .options-container {
@@ -112,19 +102,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-.create-option {
-    color: #1a73e8;
-    font-size: medium;
-    font-weight: bold;
-    display: flex;
-    border: none;
-    cursor: pointer;
-}
-
-.create-option:active {
-    background-color: lightblue;
 }
 
 @media screen and (min-width: 320px) and (max-width: 600px) {

@@ -103,21 +103,6 @@
     justify-content: space-between;
 }
 
-.signin-button-container {
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    color: #1a73e8;
-}
-
-.signin-button-container:active {
-    background-color: lightblue;
-}
-
-.next-container {
-    width: 20%;
-}
-
 .right-container {
     width: 42%;
     display: flex;
