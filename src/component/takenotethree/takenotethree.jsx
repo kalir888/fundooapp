@@ -12,6 +12,10 @@ function TakeNoteThree(props) {
 
   const [open, setOpen] = React.useState(false);
 
+  const updateClick = () => {
+    props.manageClickCount();
+}
+
   const editTitle = (event) => {
     setEditNote((prevState) => ({...prevState, Title: event.target.value}));
   }
@@ -22,7 +26,11 @@ function TakeNoteThree(props) {
 
   const submitNote = () => {
     handleClose();
-    updateNote(editNote,editNote._id).then((editedNote) => console.log(editedNote)).catch((error) => console.log(error));
+    updateNote(editNote,editNote._id).then((editedNote) => {
+      console.log(editedNote);
+      updateClick();
+    }).catch((error) => console.log(error));
+    
   }
 
   const archiveNote = (noteId) => {

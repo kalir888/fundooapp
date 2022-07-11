@@ -16,6 +16,13 @@ function Dashboard() {
 
     const [drawer, setDrawer] = React.useState(false);
 
+    const [closeClick, setCloseClick] = React.useState(0);
+
+    const manageClickCount = () => {
+        setCloseClick((prevState) => prevState + 1);
+        console.log(closeClick);
+    }
+
     const showDrawer = () => {
         setDrawer(!drawer);
         return drawer;
@@ -34,7 +41,7 @@ function Dashboard() {
             console.log(response)
             setAllNotes(response.data.data);
         }).catch((error) => console.log(error));
-    }, [])
+    }, [closeClick])
 
     return(
         <div className="dashboard-container">
@@ -42,12 +49,12 @@ function Dashboard() {
             <MiniDrawer status={drawer}/>
             <div className="dash-notes-container">
                 {
-                    takeNoteStatus ? <TakeNoteOne showNoteTwo={showNoteTwo}/> : <TakeNoteTwo showNoteOne={showNoteOne}/>
+                    takeNoteStatus ? <TakeNoteOne showNoteTwo={showNoteTwo}/> : <TakeNoteTwo manageClickCount={manageClickCount} showNoteOne={showNoteOne}/>
                 }
             </div>
             <Grid container style={{width: '80vw', height: 'auto'}} spacing={2} columns={{ xs: 8, sm: 12, md: 12 }}>
                 {allNotes.map(note => <Grid item lg={9}>
-                     <TakeNoteThree key={note._id} note={note}/>
+                     <TakeNoteThree manageClickCount={manageClickCount} key={note._id} note={note}/>
                      </Grid>)}
             </Grid>
         </div>

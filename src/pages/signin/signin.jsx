@@ -80,7 +80,7 @@ function SignIn() {
                     </div>
                 </div>
                 <div className="instruction-container">
-                    <div>Not your computer? Use Guest mode to sign in privately.</div>
+                    <div style={{textAlign: 'left'}}>Not your computer? Use Guest mode to sign in privately.</div>
                     <div className='learn-more-container'>
                         <Button size='small'><span style={{textTransform: 'none', fontWeight: 700}}>Learn more</span></Button>
                     </div>

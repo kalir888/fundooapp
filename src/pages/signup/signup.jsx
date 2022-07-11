@@ -124,7 +124,7 @@ function SignUp() {
                         }} error={regexObj.emailBorder} helperText={regexObj.emailHelper} onChange={getEmail}/>
                     </div>
                     <div className="button-container">
-                        <Button size='small'><span style={{textTransform: 'none', fontWeight: 700}}>Use my current email address instead</span></Button>
+                        <Button size='small'><span className='signup-button-text' style={{textTransform: 'none', fontWeight: 600}}>Use my current email address instead</span></Button>
                     </div>
                     <div className="password-form-container">
                         <TextField id="outlined-basic" label="Password" variant="outlined" size="small" className="name-container"
@@ -141,8 +141,8 @@ function SignUp() {
                         <FormControlLabel control={<Checkbox onChange={() => setShowPassword(!showPassword)}/>} label="Show password" />
                     </div>
                     <div className="last-option-container">
-                        <Button size='small' onClick={goToSigninPage}><span style={{textTransform: 'none', fontWeight: 700}}>Sign in instead</span></Button>
-                        <Button size="small" variant="contained" onClick={testUserDetails}><span style={{textTransform: 'none', fontWeight: 700}}>Next</span></Button>
+                        <Button size='small' onClick={goToSigninPage}><span className='signup-button-text' style={{textTransform: 'none', fontWeight: 600}}>Sign in instead</span></Button>
+                        <Button size="small" variant="contained" onClick={testUserDetails}><span className='signup-button-text' style={{textTransform: 'none', fontWeight: 600}}>Next</span></Button>
                     </div>
                 </div>
                 <div className="right-container">

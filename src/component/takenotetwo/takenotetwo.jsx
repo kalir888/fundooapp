@@ -18,6 +18,10 @@ function TakeNoteTwo(props) {
         props.showNoteOne();
     }
 
+    const updateClick = () => {
+        props.manageClickCount();
+    }
+
     const getTitle = (event) => {
         setNote((prevState) => ({...prevState, Title: event.target.value}));
     }
@@ -29,7 +33,10 @@ function TakeNoteTwo(props) {
     const createNote = () => {
         openTakeNoteOne();
         if(note.Title.trim().length !== IS_EMPTY && note.Description.trim().length !== IS_EMPTY) {
-            addNote(note).then((response) => console.log(response.data)).catch((error) => {
+            addNote(note).then((response) => {
+                console.log(response.data);
+                updateClick();
+            }).catch((error) => {
                 console.log(error)
             });
         }
@@ -54,15 +61,11 @@ function TakeNoteTwo(props) {
                 onChange={getDescription} style={{backgroundColor: note.color}}></textarea>
              <div className="option-container">
                 <div className="options">
-                    {/* <img src="./images/remindme.SVG" alt="Remindme" className="option"/> */}
                     <AddAlertOutlinedIcon fontSize=''/>
-                    {/* <img src="./images/collabarator.SVG" alt="collabarator" className="option"/> */}
                     <PersonAddAltOutlinedIcon fontSize='small' />
                     <ColorPopper getColor={getColor} action="create"/>
-                    {/* <img src="./images/addimageicon.SVG" alt="addimage" className="option"/> */}
                     <InsertPhotoOutlinedIcon fontSize='small' />
                     <ArchiveOutlinedIcon fontSize="small" onClick={archiveNote}/>
-                    {/* <img src="./images/moreicon.SVG" alt="more" className="option"/> */}
                     <MoreVertOutlinedIcon fontSize="small"/>
                     <img src="./images/undoicon.PNG" alt="undo" className="do-option"/>
                     <img src="./images/redoicon.PNG" alt="redo" className="do-option"/>
