@@ -95,12 +95,40 @@
     background: none;
     border: none;
     cursor: pointer;
+    border: 1px solid red;
 }
 
 .close-option:active {
     background-color: lightgray;
 }
 
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .take-notetwo-container {
+        width: 80vw;
+        height: 15vh;
+    }
 
+    .option-container {
+        height: 50%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
 
+    .options {
+        width: 100%;
+    }
+
+    .close-option {
+        width: 15%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+    .take-notetwo-container {
+        width: 70vw;
+        height: 15vh;
+    }
+}
 

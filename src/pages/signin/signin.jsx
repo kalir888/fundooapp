@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './signin.css';
 import { userSignin } from '../../service/userservice';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
@@ -11,7 +11,7 @@ const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).
 
 
 function SignIn() {
-    const history = useHistory();
+    const navigate = useNavigate();
     const [signinObj, setSigninObj] = React.useState({email: '', password: ''});
     const [regexObj, setRegexObj] = React.useState({emailBorder: false, emailHelper: '',passwordBorder: false, passwordHelper: ''});
 
@@ -24,7 +24,7 @@ function SignIn() {
     }
 
     const goToSignupPage = () => {
-        history.push('');
+        navigate('/');
     }
 
     const testUserDetails = () => {
@@ -46,7 +46,7 @@ function SignIn() {
             userSignin(signinObj).then((response) => {
                 console.log(response);
                 localStorage.setItem('token', response.data.data);
-                history.push('/Dashboard');
+                navigate('/Dashboard');
             }).catch((error) => console.log(error))
         }
     }

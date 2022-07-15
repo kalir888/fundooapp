@@ -52,7 +52,7 @@ function Dashboard() {
                     takeNoteStatus ? <TakeNoteOne showNoteTwo={showNoteTwo}/> : <TakeNoteTwo manageClickCount={manageClickCount} showNoteOne={showNoteOne}/>
                 }
             </div>
-            <Grid container style={{width: '80vw', height: 'auto'}} spacing={2} columns={{ xs: 8, sm: 12, md: 12 }}>
+            <Grid container id='all-notes-container'spacing={2} columns={{ xs: 8, sm: 12, md: 12 }}>
                 {allNotes.map(note => <Grid item lg={9}>
                      <TakeNoteThree manageClickCount={manageClickCount} key={note._id} note={note}/>
                      </Grid>)}

@@ -28,8 +28,8 @@ import { connect } from 'react-redux';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
+    marginTop: 85,
     width: drawerWidth,
-    marginTop: 67,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -38,7 +38,7 @@ const openedMixin = (theme) => ({
   });
   
   const closedMixin = (theme) => ({
-    marginTop: 67,
+    marginTop: 85,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -46,7 +46,7 @@ const openedMixin = (theme) => ({
     overflowX: 'hidden',
     width: `calc(${theme.spacing(7)} + 1px)`,
     [theme.breakpoints.up('sm')]: {
-      width: `calc(${theme.spacing(8)} + 1px)`,
+      width: `calc(${theme.spacing(9)} + 1px)`,
     },
   });
   
