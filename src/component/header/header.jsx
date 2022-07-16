@@ -14,6 +14,10 @@ function Header(props) {
         props.showDrawer();
     }
 
+    const getSearchNotes = (event) => {
+        props.showSearchNotes(event.target.value);
+    }
+
     return (
         <div>
             <div className="parent-container">
@@ -24,7 +28,7 @@ function Header(props) {
                 </div>
                 <div className="section-content-two">
                     <SearchIcon fontSize='large'/>
-                    <input type="search" placeholder="Search" className="search-field"/>
+                    <input type="search" placeholder="Search" className="search-field" onChange={getSearchNotes}/>
                 </div>
                 <div className="section-content-three">
                     <RefreshIcon fontSize='large'/>

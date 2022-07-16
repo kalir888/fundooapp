@@ -35,6 +35,7 @@ function TakeNoteTwo(props) {
         if(note.Title.trim().length !== IS_EMPTY && note.Description.trim().length !== IS_EMPTY) {
             addNote(note).then((response) => {
                 console.log(response.data);
+                props.getNotes();
                 updateClick();
             }).catch((error) => {
                 console.log(error)

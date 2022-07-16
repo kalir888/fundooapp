@@ -28,3 +28,8 @@ export const archiveTheNote = (id) => {
     let response = axios.put(`http://localhost:4000/api/v1/notes/isArchived/${id}`,null,headerConfig);
     return response;
 }
+
+export const trashTheNote = (id) => {
+    let response = axios.put(`http://localhost:4000/api/v1/notes/isDeleted/${id}`,null,headerConfig);
+    return response;
+}

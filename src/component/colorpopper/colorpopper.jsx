@@ -11,7 +11,10 @@ export default function ColorPopper(props) {
             props.getColor(color);
         }else if(props.action === 'update') {
             let colorObj = {_id: [props.id],color: color};
-            updateNote(colorObj, props.id).then((updatedNote) => console.log(updatedNote))
+            updateNote(colorObj, props.id).then((updatedNote) => {
+              console.log(updatedNote)
+              props.getNotes();
+            })
                                           .catch((error) => console.log(error));
         }
         

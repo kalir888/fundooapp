@@ -2,9 +2,10 @@ import React from "react";
 import "./takenotethree.css";
 import "../takenotetwo/takenotetwo.css";
 import ColorPopper from "../colorpopper/colorpopper";
-import { archiveTheNote, updateNote } from "../../service/dataservice";
+import { archiveTheNote, trashTheNote, updateNote } from "../../service/dataservice";
 import Modal from '@mui/material/Modal';
 import { Card, CardActions, CardContent, TextareaAutosize } from "@mui/material";
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
 function TakeNoteThree(props) {
 
@@ -28,15 +29,25 @@ function TakeNoteThree(props) {
     handleClose();
     updateNote(editNote,editNote._id).then((editedNote) => {
       console.log(editedNote);
+      props.getNotes();
       updateClick();
     }).catch((error) => console.log(error));
     
   }
 
   const archiveNote = (noteId) => {
-      archiveTheNote(noteId).then((updatedNote) => console.log(updatedNote)).catch((error) => console.log(error));
+    archiveTheNote(noteId).then((updatedNote) => {
+      console.log(updatedNote)
+      props.getNotes();
+    }).catch((error) => console.log(error));
   }
-
+  
+  const deleteNote = (noteId) => {
+    trashTheNote(noteId).then((updatedNote) => {
+      console.log(updatedNote)
+      props.getNotes();
+    }).catch((error) => console.log(error));
+  }
   const getColor = (color) => {
     setEditNote((prevState) => ({...prevState, color: color}));
   }
@@ -90,7 +101,7 @@ function TakeNoteThree(props) {
             alt="collabarator"
             className="notethree-option"
           />
-          <ColorPopper action="update" id={props.note._id}/>
+          <ColorPopper getNotes={props.getNotes} action="update" id={props.note._id}/>
           <img
             src="./images/addimageicon.SVG"
             alt="addimage"
@@ -102,11 +113,7 @@ function TakeNoteThree(props) {
             className="notethree-option"
             onClick={() => archiveNote(props.note._id)}
           />
-          <img
-            src="./images/moreicon.SVG"
-            alt="more"
-            className="notethree-option"
-          />
+          <DeleteOutlineOutlinedIcon onClick={() => deleteNote(props.note._id)}/>
         </CardActions>
       </Card>
       <Modal

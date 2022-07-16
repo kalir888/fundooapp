@@ -42,7 +42,7 @@
 @media screen and (min-width: 320px) and (max-width: 600px) {
     .take-noteone-container {
         width: 80vw;
-        height: 4vh;
+        height: 5vh;
     }
 
     .noteone-options-container {

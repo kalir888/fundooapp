@@ -3,21 +3,11 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
@@ -96,7 +86,19 @@ const openedMixin = (theme) => ({
 
 function MiniDrawer(props) {
   const theme = useTheme();
+
+  const getNormalNotes = () => {
+    props.showNormalNotes(props.books);
+  }
+
+  const getArchivedNotes = () => {
+    props.showArchivedNotes();
+  }
  
+  const getTrashedNotes = () => {
+    props.showTrashedNotes();
+  }
+
   const noteChoice = (noteType) => {
     props.dispatch({type : `${noteType}`});
   }
@@ -106,7 +108,10 @@ function MiniDrawer(props) {
       <CssBaseline />
       <Drawer variant="permanent" open={props.status}>
         <List>
-            <ListItem button onClick={() => noteChoice('notes')}>
+            <ListItem button onClick={() => {
+              noteChoice('notes');
+              getNormalNotes();
+            }}>
                 <ListItemIcon>
                     <LightbulbOutlinedIcon/>
                 </ListItemIcon>
@@ -124,13 +129,19 @@ function MiniDrawer(props) {
                 </ListItemIcon>
                 <ListItemText primary='Edit labels'/>
             </ListItem>
-            <ListItem button onClick={() => noteChoice('archive')}>
+            <ListItem button onClick={() => {
+              noteChoice('archive');
+              getArchivedNotes();
+            }}>
                 <ListItemIcon>
                     <ArchiveOutlinedIcon/>
                 </ListItemIcon>
                 <ListItemText primary='Archive'/>
             </ListItem>
-            <ListItem button onClick={() => noteChoice('trash')}>
+            <ListItem button onClick={() => {
+              noteChoice('trash');
+              getTrashedNotes();
+            }}>
                 <ListItemIcon>
                     <DeleteOutlineOutlinedIcon/>
                 </ListItemIcon>
